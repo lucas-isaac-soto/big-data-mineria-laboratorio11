@@ -52,4 +52,37 @@ en la base de datos HOGAR (archivo usu_hogar.txt) todo hogar que pertenezca a un
 
 en la base de datos PERSONAS (archivo usu_individual.txt) todo miembro del hogar tiene mismo CODUSU y NRO_HOGAR pero se difernecia por numero COMPONENTES.
 
+--- 
+
+#### Scrip de creacion de tabla hogar:
+
+creacion de tabla hogar:  
+```
+\i /path-a-carpeta/big-data-mineria-laboratorio11/scrips-sql/creacion-hogar.sql  
+``` 
+
+
+cargar datos de indec:  
+```
+\copy hogar from '/path-a-carpeta/big-data-mineria-laboratorio11/EPH_usu_1er_Trim_2022_txt/usu_hogar_T122.txt.txt' DELIMITER ';' CSV HEADER;
+```
+
+---
+
+#### Scrip de creacion de tabla Individual: 
+
+creacion de tabla individual:  
+```
+\i /path-a-carpeta/big-data-mineria-laboratorio11/scrips-sql/creacion-individual.sql  
+``` 
+
+
+cargar datos de indec:  
+```
+\copy individual from '/path-a-carpeta/big-data-mineria-laboratorio11/EPH_usu_1er_Trim_2022_txt/usu_individual_T122.txt.txt' DELIMITER ';' CSV HEADER;
+```
+
+### Eliminando Observaciones
+
+Elimine todas las observaciones que no corresponden a los aglomerados de Ciudad Autónoma de Buenos Aires o Gran Buenos Aires.
 
