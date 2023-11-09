@@ -1,0 +1,20 @@
+hogar
+
+
+
+
+individual
+
+CODUSU,NRO_HOGAR : identifican un individuo en un hogar
+COMPONENTE:  orden dentro del hogar
+
+ch03: parentezco en el hogar.
+ch04: sexo del individuo. 1 varon, 2 mujer
+ch05: fecha nacimiento dd-mm-yyyy
+ch06: años cumplidos
+
+ch07: relacion sentimental
+ch08: cobertura medica
+
+
+
