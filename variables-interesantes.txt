@@ -2,7 +2,7 @@ hogar
 
 
 
-
+------------------------------------------------------------------
 individual
 
 CODUSU,NRO_HOGAR : identifican un individuo en un hogar
@@ -15,6 +15,78 @@ ch06: años cumplidos
 
 ch07: relacion sentimental
 ch08: cobertura medica
+
+ch09: leer y escribir
+
+ch11: estudio en 1 publico 2 privado 9 nosabe no responde
+
+ch12: estudio mas alto que cursa o curso.
+ch13: finalizo ese nivel
+
+ch15: donde nacio
+ch16: donde vivia hace 5 años
+
+NIVEL_ED: nivel educativo
+
+ESTADO: Ocupado,Desocupado, Inactivo , menor 10 años
+CAT_OCUP: Categoria ocupados y desocupados
+
+CAT_INAC: categoria inactividad
+
+
+Ocupados que trabajaron en la semana de referencia
+
+PP03D: cantidad ocupaciones
+pp3e_tot: total horas trabajo en la semana ocupacion principal
+pp3f_tot: total horas trabajo en la semana en las otras ocupaciones
+pp03g: la semana pasada queria trabajar mas horas?
+
+
+Ocupación principal
+pp04a: estatal, privadam otro tipo
+pp04b1: presta servicio domestico en hogares particulares
+pp04b2: cuantas casas?
+
+
+Ingresos de la ocupación principal de los asalariados
+pp08d1: cuanto cobro por ese mes por estos conceptos
+
+
+Desocupado
+pp10A: cuanto hace que esta buscando trabajo 
+
+
+
+Ingresos de la ocupación principal
+p21: monto ingreso de la ocup principal
+
+Ingreso total individual
+p47t: monto ingreso total individual
+
+
+Ingresos no laborales
+v2_m: monto ingreso jubilacion o pension
+v3_m: monto ingreso indemnizacion despido
+v4_m: monto ingreso seguro desempleo
+v5_m: monto ingreso por subsidio o ayuda social.
+v8_m: monto ingreso por alquiler
+v9_m: monto ingreso por alquiler
+v10_m: monto ingreso por interes o plazofijo o inversiones
+v11_m: monto ingreso por beca de estudio
+v12_m: monto ingreso por cuotas de alimento o ayuda dinero de personas
+v19_am: monto ingreso por trabajo de menores de 10 años
+t_vi: monto ingreso no laboral
+
+Ingreso total familiar
+ITF: ingreso total familiar
+
+
+Ingreso per cápita familiar
+ipcf: monto ingreso per capita familiar
+
+
+
+
 
 
 
