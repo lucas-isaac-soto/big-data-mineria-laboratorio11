@@ -27,6 +27,8 @@ sudo apt install python3-pip
 
 INSTALAR EL MODULO PSYCOPG2 PARA QUE LEA BASE DE DATOS  
 pip install psycopg2-binary
+pip install psycopg2
+pip3 install psycopg2
 
 VERIFICAR NOMBRE DATABASE, NOMBRE USUARIO Y CONTRASENIA USUARIO DEL PROGRAMA  
 dbname  
@@ -37,10 +39,11 @@ password
 
 GRAFICOS ESTADISTICO (el segundo me funciono)  
 pip install matplotlib  
-python -m pip install -U matplotlib
+python3 -m pip install -U matplotlib
 
 COMPLEMENTOS ESTADISTICOS
 python3 -m pip install seaborn
+pip install seaborn
 
 ---
 

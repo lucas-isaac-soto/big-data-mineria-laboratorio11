@@ -49,9 +49,9 @@ def finConexion(cursor,conn):
 # Salidas:
 def menu():
     print("\nMenu:")
-    print("1. Estadistica 1")
-    print("2. Estadistica 2")
-    print("3. Estadistica 3")
+    print("1. Estadistica Barra y Torta en base a sexo")
+    print("2. Estadistica Matriz Correlacio Individuo")
+    print("3. Estadistica Matriz Correlacio Hogar")
     print("4. Salir")
 
 
@@ -208,16 +208,18 @@ def estadisticaSexo(opcion,tituloEstadistica):
         finConexion(cursor,conn)
 
 
-def option2():
-    #Realice una matriz de correlación con las siguientes variables: CH04, CH07, CH08, NIVEL_ED, ESTADO, CAT_INAC, IPCF. Comente los resultados.
-    #ch04: sexo del individuo. 1 varon, 2 mujer
-    #ch07: relacion sentimental
-    #ch08: cobertura medica
-    #NIVEL_ED: nivel educativo
-    #ESTADO: Ocupado,Desocupado, Inactivo , menor 10 años
-    #CAT_INAC: categoria inactividad
-    #ipcf: monto de ingreso per capita familiar  
-    
+# Nombre Funcion: matrizCorrelacion
+# Descripcion: muestra un grafico de matriz de correlacion entre las variables:
+#           - ch04: sexo del individuo. 1 varon, 2 mujer
+#           - ch07: relacion sentimental
+#           - ch08: cobertura medica
+#           - NIVEL_ED: nivel educativo
+#           - ESTADO: Ocupado,Desocupado, Inactivo , menor 10 años
+#           - CAT_INAC: categoria inactividad
+#           - ipcf: monto de ingreso per capita familiar
+# Parametros:
+# Salidas:
+def matrizCorrelacion():
     try:
         conn = conexion()
         cursor = conn.cursor()
@@ -229,8 +231,7 @@ def option2():
                 ind.estado,
                 ind.cat_inac as categoria_inactividad,
                 ind.ipcf as ingreso_percapita_familiar
-        from individual ind
-        inner join hogar hog on hog.codusu = ind.codusu and hog.nro_hogar = ind.nro_hogar;
+        from individual ind;
         """
         cursor.execute(sql_query)
         resultados = cursor.fetchall()
@@ -274,9 +275,9 @@ def option2():
         #crea el mapa de calor con seaborn
         plt.figure(figsize=(10, 8))
         sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
-        plt.title('Matriz de Correlacion')
+        plt.title('Matriz de Correlacion Individuos')
         plt.show()
-        
+
     except psycopg2.Error as e:
         print(f"Error: {e}")
     finally:
@@ -284,29 +285,66 @@ def option2():
 
 
 
-def option3():
-    # Creating a hypothetical dataset
-    data = {
-        'ch04': [1, 2, 1, 2, 1],
-        'ch07': [1, 2, 3, 4, 5],
-        'ch08': [1, 2, 3, 4, 5],
-        'NIVEL_ED': [1, 2, 3, 4, 5],
-        'ESTADO': [1, 2, 3, 4, 5],
-        'CAT_INAC': [1, 2, 3, 4, 5],
-        'ipcf': [1000, 2000, 1500, 3000, 2500],
-    }
+def matrizCorrelacionHogares():
+    try:
+        conn = conexion()
+        cursor = conn.cursor()
+        sql_query = """
+        select  menor18_trabaja,
+                conyuge_trabaja,
+                iv2,
+                v1,
+                v11,
+                itf
+        from hogar;
+        """
+        cursor.execute(sql_query)
+        resultados = cursor.fetchall()
 
-    # formate a una matriz
-    df = pd.DataFrame(data)
+        data = {
+            'menor18_trabaja': [],
+            'conyuge_trabaja': [],
+            'iv2': [],
+            'v1': [],
+            'v11': [],
+            'itf': [],
+        }
+        person_data = {
+        }
 
-    # realiza la correlacion de la matriz
-    corr_matrix = df.corr()
+        print("------------------------------")
+        print("|    Matriz de correlacion    |")
+        print("------------------------------\n")
+        for resultado in resultados:
+            #recuperando los datos de la persona
+            person_data = {
+                'menor18_trabaja': int(resultado[0]),
+                'conyuge_trabaja': int(resultado[1]),
+                'iv2': int(resultado[2]),
+                'v1': int(resultado[3]),
+                'v11': int(resultado[4]),
+                'itf': int(resultado[5]),
+            }
+            #agregando informacion al dataset
+            for variable, value in person_data.items():
+                data[variable].append(value)
+        
+         # formate a una matriz
+        df = pd.DataFrame(data)
 
-    # crea el mapa decalor con seaborn
-    plt.figure(figsize=(10, 8))
-    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
-    plt.title('Matriz de Correlacion')
-    plt.show()
+        # realiza la correlacion de la matriz
+        corr_matrix = df.corr()
+
+        #crea el mapa de calor con seaborn
+        plt.figure(figsize=(10, 8))
+        sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt='.2f', square=True)
+        plt.title('Matriz de Correlacion Hogares')
+        plt.show()
+
+    except psycopg2.Error as e:
+        print(f"Error: {e}")
+    finally:
+        finConexion(cursor,conn)
 
 
 def main(): 
@@ -335,9 +373,9 @@ def main():
                 print("Opcion Invalida. Volviendo al menu Principal")
 
         elif opcion == '2':
-            option2()
+            matrizCorrelacion()
         elif opcion == '3':
-            option3()
+            matrizCorrelacionHogares()
 
         elif opcion == '4':
             print("Finalizando el programa. HASTA LUEGO!")

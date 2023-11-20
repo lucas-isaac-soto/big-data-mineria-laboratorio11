@@ -12,4 +12,3 @@ delete
 from individual
 where AGLOMERADO != 32 AND AGLOMERADO != 33;
 
---

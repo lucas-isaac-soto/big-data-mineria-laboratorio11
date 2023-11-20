@@ -1,25 +1,25 @@
 # big-data-mineria-laboratorio11
 
-* Anio: 2023
-* Universidad Del Chubut, Argentina, Chubut Rawson 
-* Materia: Bases de Datos II
-* Docente: Ing. Fabio Salerno
-* Alumno: Soto Lucas
+- Anio: 2023
+- Universidad Del Chubut, Argentina, Chubut Rawson
+- Materia: Bases de Datos II
+- Docente: Ing. Fabio Salerno
+- Alumno: Soto Lucas
 
 Analizaremos el problema de la medición de la tasa de pobreza y aplicar distintos métodos de la Minería de Datos, para identificar individuos que caen bajo la línea de pobreza.
 
 ---
 
 ## Parte I: Analisis.
-La Encuesta Permanente de Hogares (EPH) es un programa nacional de producción sistemática y permanente de indicadores sociales que lleva a cabo el Instituto Nacional de Estadística y Censos (INDEC), que permite conocer las características sociodemográficas y socioeconómicas de la población. Uno de los indicadores más valiosos que pueden obtenerse con los datos extraídos de esta encuesta es la tasa de pobreza.  
+
+La Encuesta Permanente de Hogares (EPH) es un programa nacional de producción sistemática y permanente de indicadores sociales que lleva a cabo el Instituto Nacional de Estadística y Censos (INDEC), que permite conocer las características sociodemográficas y socioeconómicas de la población. Uno de los indicadores más valiosos que pueden obtenerse con los datos extraídos de esta encuesta es la tasa de pobreza.
 
 1. Utilizando información disponible en la página del INDEC, explique brevemente cómo se identifica a las personas pobres.
 
 ---
 
 2. Entre a la página [Indec Bases de Datos](https://www.indec.gob.ar/indec/web/Institucional-Indec-BasesDeDatos "Indec").  
-Descarguen la base de microdatos de la Encuesta Permanente de Hogares (EPH) correspondiente al primer trimestre de 2022. En la página web, también encontrará un diccionario de variables con el nombre de “Diseño de registro y estructura para las bases preliminares (hogares y personas)”; este archivo les indica qué significa cada variable que aparece en la base de datos, en particular, en la sección de Diseño de registros de la base Personas.
-
+   Descarguen la base de microdatos de la Encuesta Permanente de Hogares (EPH) correspondiente al primer trimestre de 2022. En la página web, también encontrará un diccionario de variables con el nombre de “Diseño de registro y estructura para las bases preliminares (hogares y personas)”; este archivo les indica qué significa cada variable que aparece en la base de datos, en particular, en la sección de Diseño de registros de la base Personas.
 
 <ol style="list-style-type:lower-alpha">
     <li>Migrelo a Postgresql.</li>
@@ -38,15 +38,13 @@ Descarguen la base de microdatos de la Encuesta Permanente de Hogares (EPH) corr
 
 ---
 
-
-4. Sabiendo que la Canasta Básica Total para un adulto equivalente en el Gran Buenos Aires en el primer trimestre de 2022 es aproximadamente $27.197,64, agregue a la base respondieron una columna llamada ingreso_necesario que sea el producto de este valor por ad_equiv_hogar. 
+4. Sabiendo que la Canasta Básica Total para un adulto equivalente en el Gran Buenos Aires en el primer trimestre de 2022 es aproximadamente $27.197,64, agregue a la base respondieron una columna llamada ingreso_necesario que sea el producto de este valor por ad_equiv_hogar.
 
 ---
 
 5. Por último, agregue a respondieron una columna llamada pobre que tome valor 1 si el ITF es menor al ingreso_necesario que necesita esa familia, y 0 en caso contrario. ¿Cuántos pobres identificó?.
 
 ---
-
 
 ## Parte II: Análisis de la base de hogares y cálculo de pobreza
 
