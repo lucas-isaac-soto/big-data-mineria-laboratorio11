@@ -1,0 +1,77 @@
+hogar
+CODUSU,NRO_HOGAR : identifican un hogar junto al individuo
+REALIZADA: entrevista REALIZADA
+
+iv1: tipo vivienda   1 casa  2 depto  3 pieza inquilino  4 pieza hotel pension  5 local no habitacion
+iv1_esp: otro tipo
+
+iv2: cuantos habitaciones ambientes tiene
+
+iv6: tiene agua 1 por canieria 2 fura de vivieda dentro terreno 3 fuera del terreno
+iv7: agua es de 1 red publica 2 perforacion motor 3 perforacion bomba manual
+iv7_esp: otro
+
+iv8: tiene banio
+iv9: 1 dentro vivienda 2 fuera dentro terreno 3 fuera terreno
+
+iv12_1: vivienda cerca de basural (3 cuadras)
+iv12_2: vivienda ubicada cerca zona inundable (12 meses)
+iv12_3: vivienda cerca de villa de emergencia
+
+ii1: cuantos ambientes habitaciones tiene de uso exclusivo
+ii2: cuantos usan para dormir
+
+ii3: alguno para trabajar
+ii3_1: cuantos?
+
+ii4: tiene ademas
+ii4_1: cuarto cocina
+ii4_2: lavadero
+ii4_3: garage
+
+ii5: usan alguno para dormir
+ii5_1: cuantos?
+
+ii7: regimen de tenencia:  01 prop vivienda terreno 02 prop vivienda 03 inquilino 04 ocupante por pago de impuesto 05 ocupante en relacion de dependencia 06 ocupante gratuito con permiso 07 ocupante de hecho sin permiso 08 en sucecion
+ii7_esp: otra situacion
+
+ii8: combustible cocinar 01 gas de red 02 garrafa 03 kerosen lenia carbon
+ii8_esp: especificar
+
+ii9: banio  01 uso exclusivo hogar 02 compartido con otros hogares 03 compartido con otras viviendas 04 no tiene
+
+EN ULTIMOS 3 MESES LAS PERSONAS DE ESTE HOGAR HAN VIVIDO
+
+v1: de lo queganan trabajando
+v2: de alguma jubilacion pension
+v21: aguinaldo de jubilacion o pension cobrada mes anterior
+v22: retroactivo de alguna jubilacion o cobro el mes anterior
+v3: indemnizacion por despido
+v4: seguro de desempleo
+v5: subsidio o ayuda social del gobierno iglesia etc
+v6: con mercaderia, ropa, alimentos gobierno, iglesias, escuelas, etc
+v7: con mercaderias, ropa, alimentos de familiares, vecinos u otras personas que no viven en este hogar
+v8: algun alquiler de su propiedad
+v9: ganancias de algun negocio que no trabajan
+v10: intereses o rentas por plazos fijos/inversiones
+v11: beca estudio
+v12: cuotas alimentos o ayuda en dinero de personas que no viven en el hogar.
+v13: gastar lo que tenia ahorrado.
+v14: pedir prestamos a familiares/amigos
+v15: pedir prestamos a bancos, financieras, etc.
+v16: compran en cuotas o al fiado con tarjeta de creadito o libreta.
+v17: vender alguna de sus pertenencias
+v18: otros ingresos en efectivo limosnas juegos de azar, etc
+v19_a: menores de 10 anios ayudan con algun dinerop trabajando
+v19_b: menores de 10 anios ayudan con algun menores pidiendo.
+
+RESUMEN HOGAR
+ix_tot: cantidad total de miembros del hogar
+ix_men10: cantidad de miembros del hogar menores de 10 anios
+ix_meyeq10: cantidad miembros de 10 y mas anios
+
+INGRESOS TOTAL familiar
+itf: monto ingreso tital familiar
+
+INGRESO PER CAPITA familiar
+ipcf: monto de ingreso per capita familiar    (se obtiene dividiendo el ingreso total familiar por la totalidad de los componentes del hogar.)

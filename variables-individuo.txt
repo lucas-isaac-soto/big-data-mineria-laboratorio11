@@ -1,8 +1,3 @@
-hogar
-
-
-
-------------------------------------------------------------------
 individual
 
 CODUSU,NRO_HOGAR : identifican un individuo en un hogar
@@ -70,19 +65,13 @@ v3_m: monto ingreso indemnizacion despido
 v4_m: monto ingreso seguro desempleo
 v5_m: monto ingreso por subsidio o ayuda social.
 v8_m: monto ingreso por alquiler
-v9_m: monto ingreso por alquiler
+v9_m: monto ganancias de algún negocio en el que trabajó
 v10_m: monto ingreso por interes o plazofijo o inversiones
 v11_m: monto ingreso por beca de estudio
 v12_m: monto ingreso por cuotas de alimento o ayuda dinero de personas
 v19_am: monto ingreso por trabajo de menores de 10 años
 t_vi: monto ingreso no laboral
 
-Ingreso total familiar
-ITF: ingreso total familiar
-
-
-Ingreso per cápita familiar
-ipcf: monto ingreso per capita familiar
 
 
 
